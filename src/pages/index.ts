@@ -1,3 +1,6 @@
 export * from './SignIn'
 export * from './SignUp'
 export * from './Dashboard'
+export * from './Users'
+export * from './Reports'
+export * from './Settings'
