@@ -1,4 +1,6 @@
 import { LayoutDashboard, Users, LineChart, Settings, X } from 'lucide-react'
+import { Link } from 'wouter'
+import { ROUTES, preloadRoutes } from '../../routes'
 
 interface Props {
   open: boolean
@@ -6,10 +8,30 @@ interface Props {
 }
 
 const navItems = [
-  { icon: LayoutDashboard, label: 'Dashboard', href: '#' },
-  { icon: Users, label: 'Users', href: '#' },
-  { icon: LineChart, label: 'Reports', href: '#' },
-  { icon: Settings, label: 'Settings', href: '#' },
+  {
+    icon: LayoutDashboard,
+    label: 'Dashboard',
+    href: ROUTES.DASHBOARD,
+    preload: preloadRoutes.DASHBOARD,
+  },
+  {
+    icon: Users,
+    label: 'Users',
+    href: ROUTES.USERS,
+    preload: preloadRoutes.USERS,
+  },
+  {
+    icon: LineChart,
+    label: 'Reports',
+    href: ROUTES.REPORTS,
+    preload: preloadRoutes.REPORTS,
+  },
+  {
+    icon: Settings,
+    label: 'Settings',
+    href: ROUTES.SETTINGS,
+    preload: preloadRoutes.SETTINGS,
+  },
 ]
 
 export function Sidebar({ open, onClose }: Props) {
@@ -27,15 +49,16 @@ export function Sidebar({ open, onClose }: Props) {
       </div>
 
       <nav className="flex flex-col gap-1 px-4 lg:px-6 lg:py-6">
-        {navItems.map(({ icon: Icon, label, href }) => (
-          <a
+        {navItems.map(({ icon: Icon, label, href, preload }) => (
+          <Link
             key={label}
             href={href}
+            onMouseEnter={preload}
             className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-gray-100 transition-colors text-sm font-medium"
           >
             <Icon className="w-5 h-5 text-gray-500" />
             <span>{label}</span>
-          </a>
+          </Link>
         ))}
       </nav>
     </aside>
