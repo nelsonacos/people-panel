@@ -1,42 +1,16 @@
-import { LayoutDashboard, Users, LineChart, Settings, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import { Link } from 'wouter'
-import { ROUTES, preloadRoutes } from '../../routes'
+import { navItems } from './'
 
 interface Props {
   open: boolean
   onClose: () => void
 }
 
-const navItems = [
-  {
-    icon: LayoutDashboard,
-    label: 'Dashboard',
-    href: ROUTES.DASHBOARD,
-    preload: preloadRoutes.DASHBOARD,
-  },
-  {
-    icon: Users,
-    label: 'Users',
-    href: ROUTES.USERS,
-    preload: preloadRoutes.USERS,
-  },
-  {
-    icon: LineChart,
-    label: 'Reports',
-    href: ROUTES.REPORTS,
-    preload: preloadRoutes.REPORTS,
-  },
-  {
-    icon: Settings,
-    label: 'Settings',
-    href: ROUTES.SETTINGS,
-    preload: preloadRoutes.SETTINGS,
-  },
-]
-
 export function Sidebar({ open, onClose }: Props) {
   return (
     <aside
+      data-testid="sidebar"
       className={`fixed inset-y-0 left-0 z-30 w-64 bg-white text-gray-800 border-r border-gray-200 transform transition-transform ${
         open ? 'translate-x-0' : '-translate-x-full'
       } lg:translate-x-0 lg:static`}
