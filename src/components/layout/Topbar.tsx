@@ -15,7 +15,7 @@ export function Topbar({ toggleSidebar }: Props) {
       <h1 className="text-xl font-bold">People Panel</h1>
 
       <div className="flex items-center gap-4">
-        <UserButton afterSignOutUrl="/" />
+        <UserButton />
       </div>
     </header>
   )
