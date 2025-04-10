@@ -25,7 +25,11 @@ export default defineConfig(<UserConfig>{
     },
   },
   server: {
+    host: true,
     port: 3000,
-    open: true,
+    open: false,
+    watch: {
+      usePolling: true,
+    },
   },
 })
