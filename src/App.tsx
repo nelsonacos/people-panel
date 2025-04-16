@@ -3,7 +3,7 @@ import { Route, Switch } from 'wouter'
 import { ProtectedRoute, RedirectHome } from './components'
 import { Sidebar } from './components/layout/Sidebar'
 import { Topbar } from './components/layout/Topbar'
-import { SignInPage, SignUpPage, Dashboard, Users, Reports, Settings } from './pages'
+import { SignInPage, SignUpPage, Dashboard, Users, Reports, SmartQueryLab, Settings } from './pages'
 
 import './App.css'
 
@@ -37,6 +37,12 @@ function App() {
               <Route path="/reports">
                 <ProtectedRoute>
                   <Reports />
+                </ProtectedRoute>
+              </Route>
+
+              <Route path="/smart-query-lab">
+                <ProtectedRoute>
+                  <SmartQueryLab />
                 </ProtectedRoute>
               </Route>
 

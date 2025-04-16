@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, LineChart, Settings } from 'lucide-react'
+import { LayoutDashboard, Users, LineChart, FlaskConical, Settings } from 'lucide-react'
 import { ROUTES, preloadRoutes } from '../../routes'
 export const navItems = [
   {
@@ -18,6 +18,12 @@ export const navItems = [
     label: 'Reports',
     href: ROUTES.REPORTS,
     preload: preloadRoutes.REPORTS,
+  },
+  {
+    icon: FlaskConical,
+    label: 'Smart Query',
+    href: ROUTES.SMART_QUERY_LAB,
+    preload: preloadRoutes.SMART_QUERY_LAB,
   },
   {
     icon: Settings,
